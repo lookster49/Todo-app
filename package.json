@@ -2,7 +2,7 @@
   "name": "todo-app",
   "version": "1.0.0",
   "description": "A todo app",
-  "main": "src/main.js",
+  "main": "main.js",
   "scripts": {
     "start": "nodemon --exec babel-node main.js",
     "test": "mocha ./main.js"
