@@ -14,6 +14,7 @@
     "ejs": "^2.5.1",
     "express": "^4.14.0",
     "knex": "^0.11.9",
+    "node-restful": "^0.2.5",
     "sqlite3": "^3.1.4"
   },
   "devDependencies": {
