@@ -1,12 +1,9 @@
 import express from 'express'
 import path from 'path'
-import knex from 'knex'
 import bodyParser from 'body-parser'
 
 import db from './src/database'
 import todos from './routers/todo'
-
-
 
 let app = express()
 app.disable('x-powered-by')
@@ -16,6 +13,14 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
 app.use('/', todos)
 
-app.listen(app.get('port'), function(){
+db.select('*').from('todos').asCallback(function (err, values) {
+  if (err) {
+    console.log(err)
+  } else {
+    console.log(values)
+  }
+})
+
+app.listen(app.get('port'), function () {
   console.log('Press Ctrl+C to terminate...')
 })
