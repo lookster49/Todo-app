@@ -1,18 +1,19 @@
 import express from 'express'
-import todos from '../seeds/dev/todos'
+import db from './src/database'
 const router = express.Router()
 
 router.get('/', (req, res) => {
   res.render('todo', {title: 'Todo App'})
 })
-router.post('/add', (req, res) => {
+router.post('/', (req, res) => {
   console.log(req.body)
 })
-router.get('/edit', (req, res) => {
+router.put('/', (req, res) => {
 // nothing yet
 })
-router.delete('/delete', (req, res) => {
+router.delete('/', (req, res) => {
 // nothing yet
 })
+router.post()
 
 export default router
