@@ -12,6 +12,9 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
 app.use('/', todos)
+app.use('/add', todos)
+app.use('/edit', todos)
+app.use('/delete', todos)
 
 db.select('*').from('todos').asCallback(function (err, values) {
   if (err) {

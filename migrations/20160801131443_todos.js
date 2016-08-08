@@ -2,7 +2,7 @@
 exports.up = function (knex, Promise) {
   return Promise.join(
     knex.schema.createTable('todos', function (table) {
-      table.string('todo_table')
+      table.string('todo_item')
       table.timestamps()
     })
   )
